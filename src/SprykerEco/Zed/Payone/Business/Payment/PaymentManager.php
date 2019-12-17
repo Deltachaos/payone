@@ -1124,7 +1124,7 @@ class PaymentManager implements PaymentManagerInterface
     {
         foreach ($expenses as $expense) {
             if ($expense->getType() === ShipmentConstants::SHIPMENT_EXPENSE_TYPE) {
-                return $expense->getSumGrossPrice();
+                return $expense->getRefundableAmount();
             }
         }
         return 0;
